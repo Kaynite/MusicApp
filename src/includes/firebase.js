@@ -20,6 +20,8 @@ const usersCollection = db.collection("users");
 const songsCollection = db.collection("songs");
 const commentsCollection = db.collection("comments");
 
+db.enablePersistence();
+
 export {
   auth,
   db,

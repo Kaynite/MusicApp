@@ -8,12 +8,12 @@ import Icon from "@/directives/icon";
 import "./assets/tailwind.css";
 import "./assets/main.css";
 import i18n from "./includes/i18n";
+import "./registerServiceWorker";
 
 let app;
 auth.onAuthStateChanged(() => {
   if (!app) {
     app = createApp(App);
-
     app.use(store);
     app.use(router);
     app.use(VeeValidate);
