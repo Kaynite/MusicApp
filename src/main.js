@@ -7,6 +7,7 @@ import { auth } from "./includes/firebase";
 import Icon from "@/directives/icon";
 import "./assets/tailwind.css";
 import "./assets/main.css";
+import i18n from "./includes/i18n";
 
 let app;
 auth.onAuthStateChanged(() => {
@@ -16,6 +17,7 @@ auth.onAuthStateChanged(() => {
     app.use(store);
     app.use(router);
     app.use(VeeValidate);
+    app.use(i18n);
     app.directive("icon", Icon);
     app.mount("#app");
   }

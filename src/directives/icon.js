@@ -1,6 +1,6 @@
 export default {
   beforeMount(el, binding) {
-    let className = `fa fa-${binding.value}`;
+    let className = `fa fa-${binding.value} text-2xl`;
 
     if (binding.arg == "custom") {
       className = binding.value;
