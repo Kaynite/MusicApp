@@ -7,8 +7,12 @@ import { auth } from "./includes/firebase";
 import Icon from "@/directives/icon";
 import "./assets/tailwind.css";
 import "./assets/main.css";
+import "nprogress/nprogress.css";
 import i18n from "./includes/i18n";
 import "./registerServiceWorker";
+import ProgressBar from "@/includes/progress-bar";
+
+ProgressBar(router);
 
 let app;
 auth.onAuthStateChanged(() => {

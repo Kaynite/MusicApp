@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "@/views/Home.vue";
-import Manage from "@/views/Manage.vue";
-import NotFound from "@/views/NotFound.vue";
-import Login from "@/views/Login.vue";
 import auth from "./middleware/auth";
 import store from "@/store";
-import Song from "@/views/Song.vue";
+
+const Home = () => import("@/views/Home.vue");
+const Manage = () => import("@/views/Manage.vue");
+const NotFound = () => import("@/views/NotFound.vue");
+const Login = () => import("@/views/Login.vue");
+const Song = () => import(/* webpackChunkName: "Song" */ "@/views/Song.vue");
 
 const routes = [
   {

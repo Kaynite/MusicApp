@@ -25,7 +25,7 @@
           class="absolute left-0 right-0 text-lg text-center mx-auto player-song-info"
         >
           <span class="song-title">{{ currentSong.modified_name }}</span>
-          <span class="song-artist">(By {{ currentSong.displayName }})</span>
+          <span class="song-artist"> (By {{ currentSong.displayName }})</span>
         </div>
         <!-- Scrub Container  -->
         <span
@@ -69,7 +69,12 @@ export default {
   },
   computed: {
     ...mapGetters(["playing"]),
-    ...mapState(["seek", "duration", "songProgress", "currentSong"]),
+    ...mapState({
+      seek: (state) => state.player.seek,
+      duration: (state) => state.player.duration,
+      songProgress: (state) => state.player.songProgress,
+      currentSong: (state) => state.player.currentSong,
+    }),
   },
 };
 </script>
