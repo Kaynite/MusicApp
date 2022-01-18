@@ -1,4 +1,21 @@
 {
+  "comments_count": "No Comments | 1 Comment | {count} Comments",
   "listen": "Listen to Great Music!",
-  "comments_count": "No Comments | 1 Comment | {count} Comments"
+  "log_reg": "Login / Register",
+  "logout": "Logout",
+  "manage": "Manage",
+  "songs": "Songs",
+  "no songs": "No Songs",
+  "upload": "Upload",
+  "drop here": "Drop your files here",
+  "my songs": "My Songs",
+  "song title": "Song Title",
+  "enter song title": "Enter Song Title",
+  "genre": "Genre",
+  "enter genre": "Enter Genre",
+  "submit": "Submit",
+  "go back": "Go Back",
+  "latest": "Latest",
+  "oldest": "Oldest",
+  "comment here": "Your comment here!"
 }

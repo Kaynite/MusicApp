@@ -28,18 +28,16 @@
   <!-- Main Content -->
   <section class="container mx-auto">
     <div class="bg-white rounded border border-gray-200 relative flex flex-col">
-      <div
-        class="px-6 pt-6 pb-5 font-bold border-b border-gray-200"
-        v-icon.right="'headphones-alt'"
-      >
-        <span class="card-title">Songs</span>
+      <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200 flex">
+        <span class="card-title">{{ $t("songs") }}</span>
+        <i class="fa fa-headphones-alt text-2xl ms-auto text-green-500"></i>
       </div>
       <!-- Playlist -->
 
       <ol id="playlist" v-if="songs.length">
         <SongItem v-for="song in songs" :key="song.docID" :song="song" />
       </ol>
-      <p class="text-center p-4" v-else>No Songs.</p>
+      <p class="text-center p-4" v-else>{{ $t("no songs") }}</p>
       <!-- .. end Playlist -->
     </div>
   </section>

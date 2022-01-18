@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Tajawal:wght@400;700&display=swap');
+
 a {
   transition: all 0.15s ease;
 }
@@ -88,4 +90,13 @@ input[type="file"]{
   100% {
     background-position: -4000px 0;
   }
+}
+
+.container {
+  max-width: 1280px;
+}
+
+body.rtl {
+  direction: rtl;
+  font-family: 'Tajawal', sans-serif;
 }

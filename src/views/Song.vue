@@ -1,6 +1,6 @@
 <template>
   <!-- Music Header -->
-  <section class="w-full mb-8 py-14 text-center text-white relative">
+  <section class="w-full mb-8 py-14 text-white relative">
     <div
       class="absolute inset-0 w-full h-full box-border bg-contain music-bg"
       style="background-image: url(/assets/img/song-header.png)"
@@ -14,7 +14,7 @@
       >
         <i class="fas fa-play"></i>
       </button>
-      <div class="z-50 text-left ml-8">
+      <div class="z-50 ms-8">
         <!-- Song Info -->
         <div class="text-3xl font-bold">{{ song.modified_name }}</div>
         <div>{{ song.genre }}</div>
@@ -24,14 +24,14 @@
   <!-- Form -->
   <section class="container mx-auto mt-6">
     <div class="bg-white rounded border border-gray-200 relative flex flex-col">
-      <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200">
+      <div class="px-6 pt-6 pb-5 font-bold border-b border-gray-200 flex">
         <!-- Comment Count -->
         <span class="card-title">
           {{
             $tc("comments_count", comments.length, { count: comments.length })
           }}
         </span>
-        <i class="fa fa-comments float-right text-green-400 text-2xl"></i>
+        <i class="fa fa-comments text-green-400 text-2xl ms-auto"></i>
       </div>
       <div class="p-6">
         <CommentForm
@@ -43,8 +43,8 @@
           v-model="sort"
           class="block mt-4 py-1.5 px-3 text-gray-800 border border-gray-300 transition duration-500 focus:outline-none focus:border-black rounded"
         >
-          <option value="1">Latest</option>
-          <option value="2">Oldest</option>
+          <option value="1">{{ $t("latest") }}</option>
+          <option value="2">{{ $t("oldest") }}</option>
         </select>
       </div>
     </div>

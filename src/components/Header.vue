@@ -19,22 +19,27 @@
               href="#"
               @click.prevent="toggleAuthModal"
             >
-              Login / Register
+              {{ $t("log_reg") }}
             </a>
           </li>
           <template v-else>
             <li>
-              <router-link class="px-2 text-white" :to="{ name: 'manage' }"
-                >Manage</router-link
-              >
+              <router-link class="px-2 text-white" :to="{ name: 'manage' }">{{
+                $t("manage")
+              }}</router-link>
             </li>
 
             <li>
-              <a class="px-2 text-white" href="#" @click.prevent="logout"
-                >Logout</a
-              >
+              <a class="px-2 text-white" href="#" @click.prevent="logout">{{
+                $t("logout")
+              }}</a>
             </li>
           </template>
+        </ul>
+        <ul class="text-white ms-auto">
+          <li @click="changeLocale" class="cursor-pointer">
+            {{ currentLocale }}
+          </li>
         </ul>
       </div>
     </nav>
@@ -53,11 +58,26 @@ export default {
         this.$router.push({ name: "home" });
       }
     },
+    changeLocale() {
+      const body = document.querySelector("body");
+      if (this.$i18n.locale == "en") {
+        this.$i18n.locale = "ar";
+        body.classList.add("rtl");
+        body.setAttribute("dir", "rtl");
+      } else {
+        this.$i18n.locale = "en";
+        body.classList.remove("rtl");
+        body.setAttribute("dir", "ltr");
+      }
+    },
   },
   computed: {
     ...mapState({
       isLoggedIn: (state) => state.auth.userLoggedIn,
     }),
+    currentLocale() {
+      return this.$i18n.locale == "ar" ? "English" : "العربية";
+    },
   },
 };
 </script>
