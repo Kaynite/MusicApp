@@ -35,16 +35,13 @@
           <!-- Player Ball -->
           <span
             class="absolute top-neg-8 text-gray-800 text-lg"
-            :style="{
-              left: songProgress,
-              transform: 'translateX(-50%)',
-            }"
+            :style="ballStyles"
           >
             <i class="fas fa-circle"></i>
           </span>
           <!-- Player Progress Bar-->
           <span
-            class="block h-2 rounded bg-gradient-to-r from-green-500 to-green-400"
+            class="block h-2 rounded bg-gradient-to-r from-green-500 to-green-400 start"
             :style="{ width: songProgress }"
           ></span>
         </span>
@@ -75,6 +72,15 @@ export default {
       songProgress: (state) => state.player.songProgress,
       currentSong: (state) => state.player.currentSong,
     }),
+    ballStyles() {
+      const dir = this.$i18n.locale == "ar" ? "right" : "left";
+
+      const styles = {};
+
+      styles[dir] = this.songProgress;
+
+      return styles;
+    },
   },
 };
 </script>
